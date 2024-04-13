@@ -16,7 +16,9 @@ const Hero = () => (
           <Button formId="features-section"> Features </Button>
         </li>
         <li>
-          <Button linkTo="https://www.google.com"> Instagram </Button>
+          <Button linkTo="https://www.instagram.com/royalkidsschool_rajnagar">
+            Instagram
+          </Button>
         </li>
       </NavbarTwoColumns>
     </Section>
