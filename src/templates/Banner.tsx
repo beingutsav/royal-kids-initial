@@ -6,7 +6,7 @@ const Banner = () => (
   <Section>
     <CTABanner
       title="Gift your little one a great future!"
-      subtitle="Enroll Today! Contact : 9212187575"
+      subtitle="Enroll Today! Contact : 9990961898"
       button={<Button formId="contact-form-section">Start Learning</Button>}
     />
   </Section>

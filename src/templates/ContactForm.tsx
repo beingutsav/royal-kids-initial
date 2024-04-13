@@ -30,7 +30,7 @@ const ContactForm: React.FC = () => {
   return (
     <div className="mx-auto mt-20 max-w-screen-lg rounded-md bg-red-500 px-4 py-8">
       <h2 className="mb-4 text-2xl font-semibold text-white">
-        Contact Us : 9212187475
+        Contact Us : 9990961898
       </h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
