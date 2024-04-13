@@ -1,7 +1,5 @@
-// ContactForm.tsx
+import { send } from 'emailjs-com';
 import React, { useState } from 'react';
-
-import { Button } from '../button/Button';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +23,28 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     // Add your form submission logic here
     console.log(formData);
+
+    // Send email using EmailJS
+    send(
+      'royal_kids_outlook',
+      'template_wr5zeiz',
+      formData,
+      'PtcvAtZHTlYbGIRgs',
+    )
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+      })
+      .catch((error) => {
+        console.error('Email sending failed:', error);
+      });
+
+    // Reset form data
+    setFormData({
+      name: '',
+      email: '',
+      phoneNumber: '',
+      message: '',
+    });
   };
 
   return (
@@ -89,9 +109,12 @@ const ContactForm: React.FC = () => {
             required
           />
         </div>
-        <Button xl formId="contact-form-section">
+        <button
+          type="submit"
+          className="rounded-md bg-yellow-300 px-4 py-2 font-semibold text-black"
+        >
           Submit
-        </Button>
+        </button>
       </form>
     </div>
   );
