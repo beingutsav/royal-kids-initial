@@ -3,22 +3,18 @@
     "title": "Creative Learning",
     "description": "At Royal Kids, we foster creativity and imagination through hands-on learning activities. Our curriculum encourages exploration and experimentation, helping children develop problem-solving skills and unleash their creative potential.",
     "image": "/creative-learning.jpg",
-    "imageAlt": "Creative Learning",
-    "bgColorClassName": "bg-red-600"
+    "imageAlt": "Creative Learning"
   },
   {
     "title": "Holistic Development",
     "description": "We believe in holistic development, focusing on the physical, emotional, social, and cognitive growth of each child. Our dedicated educators provide personalized attention, nurturing every aspect of a child's development.",
     "image": "/holistic-development.jpg",
-    "imageAlt": "Holistic Development",
-    "bgColorClassName": "bg-green-600",
-    "reverse": true
+    "imageAlt": "Holistic Development"
   },
   {
     "title": "Safe and Supportive Environment",
     "description": "At Royal Kids, safety is our top priority. We maintain a secure and supportive environment where children feel valued, respected, and encouraged to explore and express themselves freely.",
     "image": "safe.jpg",
-    "imageAlt": "Safe and Supportive Environment",
-    "bgColorClassName": "bg-yellow-600"
+    "imageAlt": "Safe and Supportive Environment"
   }
 ]

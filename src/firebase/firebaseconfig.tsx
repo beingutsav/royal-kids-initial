@@ -22,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 // Reference to the "features" data
-const featuresRef = ref(db, 'features');
+const featuresRef = ref(db, 'royal-kids-data/features');
 
 // Listen for changes in the data
 onValue(featuresRef, (snapshot) => {
