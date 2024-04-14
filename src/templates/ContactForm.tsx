@@ -1,6 +1,8 @@
 import { send } from 'emailjs-com';
 import React, { useState } from 'react';
 
+import { AppConfig } from '../utils/AppConfig';
+
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -26,10 +28,10 @@ const ContactForm: React.FC = () => {
 
     // Send email using EmailJS
     send(
-      'royal_kids_outlook',
-      'template_wr5zeiz',
+      AppConfig.email_service_id,
+      AppConfig.email_template_id,
       formData,
-      'PtcvAtZHTlYbGIRgs',
+      AppConfig.email_user_id,
     )
       .then((response) => {
         console.log('Email sent successfully:', response);
