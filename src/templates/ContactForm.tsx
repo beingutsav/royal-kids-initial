@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { send } from 'emailjs-com';
 import React, { useState } from 'react';
 
@@ -56,8 +57,11 @@ const ContactForm: React.FC = () => {
   return (
     <div className="mx-auto mt-20 max-w-screen-lg rounded-md bg-red-500 px-4 py-8">
       <h2 className="mb-4 text-2xl font-semibold text-white">
-        Contact Us : 9990961898
+        Contact Us At : {AppConfig.enquiry_number}
       </h2>
+      <h3 className="mb-4 text-2xl font-semibold text-white">
+        Or write to us, and we'll get back to you in an hour :)
+      </h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="name" className="mb-2 block text-white">
