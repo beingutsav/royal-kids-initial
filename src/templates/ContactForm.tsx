@@ -11,6 +11,8 @@ const ContactForm: React.FC = () => {
     message: '',
   });
 
+  const [showSplash, setShowSplash] = useState(false); // State to manage splash visibility
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -21,32 +23,34 @@ const ContactForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
 
-    // Send email using EmailJS
-    send(
-      AppConfig.email_service_id,
-      AppConfig.email_template_id,
-      formData,
-      AppConfig.email_user_id,
-    )
-      .then((response) => {
-        console.log('Email sent successfully:', response);
-      })
-      .catch((error) => {
-        console.error('Email sending failed:', error);
-      });
+    try {
+      // Send email using EmailJS
+      await send(
+        AppConfig.email_service_id,
+        AppConfig.email_template_id,
+        formData,
+        AppConfig.email_user_id,
+      );
 
-    // Reset form data
-    setFormData({
-      name: '',
-      email: '',
-      phoneNumber: '',
-      message: '',
-    });
+      // Show splash message
+      setShowSplash(true);
+
+      // Reset form data after a delay
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phoneNumber: '',
+          message: '',
+        });
+        setShowSplash(false); // Hide splash message
+      }, 3000); // 3000 milliseconds (3 seconds)
+    } catch (error) {
+      console.error('Email sending failed:', error);
+    }
   };
 
   return (
@@ -118,6 +122,11 @@ const ContactForm: React.FC = () => {
           Submit
         </button>
       </form>
+      {showSplash && (
+        <div className="mt-4 rounded-md bg-green-500 px-4 py-2 text-white">
+          Message sent successfully!
+        </div>
+      )}
     </div>
   );
 };
