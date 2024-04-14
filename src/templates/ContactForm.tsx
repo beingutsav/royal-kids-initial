@@ -56,15 +56,15 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="mx-auto mt-20 max-w-screen-lg rounded-md bg-red-500 px-4 py-8">
-      <h2 className="mb-4 text-2xl font-semibold text-white">
+      <h2 className="mb-4 text-2xl font-semibold text-black">
         Contact Us At : {AppConfig.enquiry_number}
       </h2>
-      <h3 className="mb-4 text-2xl font-semibold text-white">
+      <h3 className="mb-4 text-2xl font-semibold text-black">
         Or write to us, and we'll get back to you in an hour :)
       </h3>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="name" className="mb-2 block text-white">
+          <label htmlFor="name" className="mb-2 block text-black">
             Name:
           </label>
           <input
@@ -78,7 +78,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="mb-2 block text-white">
+          <label htmlFor="email" className="mb-2 block text-black">
             Email:
           </label>
           <input
@@ -92,7 +92,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="phoneNumber" className="mb-2 block text-white">
+          <label htmlFor="phoneNumber" className="mb-2 block text-black">
             Phone Number:
           </label>
           <input
@@ -106,7 +106,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="message" className="mb-2 block text-white">
+          <label htmlFor="message" className="mb-2 block text-black">
             Message:
           </label>
           <textarea
@@ -127,7 +127,7 @@ const ContactForm: React.FC = () => {
         </button>
       </form>
       {showSplash && (
-        <div className="mt-4 rounded-md bg-green-500 px-4 py-2 text-white">
+        <div className="mt-4 rounded-md bg-green-500 px-4 py-2 text-black">
           Message sent successfully!
         </div>
       )}
