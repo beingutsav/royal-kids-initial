@@ -88,7 +88,10 @@ const EventForm: React.FC = () => {
                 >
                   <option value="">Select category</option>
                   <option value="dance">Dance</option>
-                  <option value="momAndMe">Mom & Me</option>
+                  <option value="singing">Singing</option>
+                  <option value="FashionShow Or Ramp Walk">
+                    Fashion Show / Ramp Walk
+                  </option>
                 </select>
               </div>
               <div className="mb-4">
