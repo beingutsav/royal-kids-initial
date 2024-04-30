@@ -7,4 +7,5 @@ export const AppConfig = {
   email_user_id: 'PtcvAtZHTlYbGIRgs',
   email_service_id: 'royal_kids_outlook',
   enquiry_number: '9990961898',
+  email_template_id_event: 'template_wr5zeiz',
 };
