@@ -3,21 +3,42 @@ import type { ReactNode } from 'react';
 type IBackgroundProps = {
   children: ReactNode;
   color?: string;
-  imageUrl?: string; // New prop for background image URL
+  videoUrl?: string; // New prop for background video URL
 };
 
 const Background1 = (props: IBackgroundProps) => {
-  const { children, color, imageUrl } = props;
+  const { children, color, videoUrl } = props;
 
-  const style: React.CSSProperties = {
+  const backgroundStyle: React.CSSProperties = {
+    position: 'relative',
+    width: '100%',
+    height: '100%',
     backgroundColor: color, // Apply background color if provided
-    backgroundImage: imageUrl ? `url(${imageUrl})` : 'none', // Apply background image if provided
-    backgroundSize: 'cover', // Adjust as needed
-    backgroundRepeat: 'no-repeat', // Adjust as needed
-    backgroundPosition: 'center', // Adjust as needed
+    overflow: 'hidden',
   };
 
-  return <div style={style}>{children}</div>;
+  const videoStyle: React.CSSProperties = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    zIndex: -1, // Ensure the video is behind the children
+  };
+
+  return (
+    <div style={backgroundStyle}>
+      {videoUrl && (
+        <video autoPlay loop muted style={videoStyle}>
+          <source src={videoUrl} type="video/mp4" />
+          {/* Add additional source tags for different video formats if needed */}
+          Your browser does not support the video tag.
+        </video>
+      )}
+      <div style={{ position: 'relative', zIndex: 1 }}>{children}</div>
+    </div>
+  );
 };
 
 export { Background1 };

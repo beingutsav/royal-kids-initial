@@ -6,7 +6,7 @@ import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
 const Hero = () => (
-  <Background1 imageUrl="/motherdaybanner.jpeg">
+  <Background1 videoUrl="/backgroundvideo.mp4">
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl imageUrl="/logo1.webp" />}>
         <li>
@@ -29,14 +29,14 @@ const Hero = () => (
           <>
             {/* 'The modern landing page for\n' */}
             <span className="text-blue-500">
-              Mother&apos;s Day Celebration at Royal Kids! Register Below
+              Admissions Open! Click to register below..
             </span>
           </>
         }
         description="Raj Nagar, Ghaziabad"
         button={
-          <Button xl linkTo="/eventform">
-            Mother&apos;s day Registration
+          <Button xl formId="contact-form-section">
+            Apply for Registration
           </Button>
         }
       />
